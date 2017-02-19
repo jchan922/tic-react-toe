@@ -4,8 +4,8 @@
 }
 
 body {
-    font-family: helvetica;
     background-color: #5C6BC0;
+    font-family: 'Dosis', sans-serif;
     color: white;
 }
 
@@ -13,10 +13,12 @@ body {
 h1 {
     background-color: #3949AB;
     width: 100%;
-    margin: 15px 0px 25px 0px;
+    margin: 15px auto 25px auto;
     padding: 10px 0px;
+    display: block;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
+    font-weight: 700;
     color: white;
     opacity: .87;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -27,16 +29,17 @@ h2 {
     padding: 0;
     text-align: center;
     font-size: 1.5em;
-    font-weight: normal;
-    color: #FFEA00;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #ffe207;
     opacity: .87;
+    text-shadow: 2px 1px 5px rgba(150, 150, 150, 1);
 }
 
 .app-container {
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     margin: 25px auto;
-    padding: 0;
 }
 
     .board {
@@ -72,7 +75,9 @@ h2 {
         }
 
         .playerSymbol {
-            font-size: 5em;
+            font-family: 'Lato', sans-serif;
+            font-size: 4em;
+            font-weight: 700;
             color: #1A237E;
             opacity: .75;
         }
@@ -92,7 +97,9 @@ h2 {
         border-radius: 20px;
         background-color: #FFC107;
         text-align: center;
-        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 1em;
         color: white;
         cursor: pointer;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -101,4 +108,88 @@ h2 {
 
     .resetButton:hover{
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+
+
+.swing {
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+}
+
+
+@-webkit-keyframes swing{
+        0%{
+            -webkit-transform: translateX(-5000px);
+            transform: translateX(-5000px);
+        }
+
+        15%
+        {
+            -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+        }
+        30%
+        {
+            -webkit-transform: translateX(-5px);
+           transform: translateX(-5px);
+        }
+        50%
+        {
+            -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+        }
+        65%
+        {
+            -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+        }
+        80%
+        {
+            -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+        }
+        100%
+        {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+@keyframes swing {
+        0%{
+            -webkit-transform: translateX(-1500px);
+            transform: translateX(-1500px);
+        }
+        15%
+        {
+            -webkit-transform: translateX(150px);
+            transform: translateX(150px);
+        }
+        30%
+        {
+            -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+        }
+        50%
+        {
+            -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+        }
+        65%
+        {
+            -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+        }
+        80%
+        {
+            -webkit-transform: translateX(1px);
+            transform: translateX(1px);
+        }
+        100%
+        {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
     }

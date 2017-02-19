@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
+var player_one = "X", player_two = "O"
 
+class App extends Component {
     // Component Initialization
     constructor(props){
         super(props)
         this.state = {
-            player_one: "X",
-            player_two: "O",
-            currentTurn: "X",
+            currentTurn: player_one,
             board: [
                 "", "", "", "", "", "", "", "", ""
             ],
@@ -29,19 +28,16 @@ class App extends Component {
             this.setState({
                 board: this.state.board,
                 winner: this.checkForWinner(),
-                currentTurn: this.state.currentTurn === this.state.player_one ? this.state.player_two : this.state.player_one,
+                currentTurn: this.state.currentTurn === player_one ? player_two : player_one,
                 moveCount: count
             });
-
         }
     }
 
     handleReset(){
-        console.log("RESET")
+        console.log("RESET");
         this.setState({
-            player_one: "X",
-            player_two: "O",
-            currentTurn: "X",
+            currentTurn: player_one,
             board: [
                 "", "", "", "", "", "", "", "", ""
             ],
@@ -50,7 +46,7 @@ class App extends Component {
         })
     }
 
-    checkForWinner(moveCount) {
+    checkForWinner() {
         var currentTurn = this.state.currentTurn;
         var symbols = this.state.board;
         var winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
@@ -59,21 +55,17 @@ class App extends Component {
             if(symbols[combo[0]] !== "" && symbols[combo[1]] !== ""  && symbols[combo[2]] !== ""  && symbols[combo[0]] === symbols[combo[1]] && symbols[combo[1]] === symbols[combo[2]]) {
                 console.log("Found a winner", currentTurn, [combo[0],combo[1],combo[2]]);
                 return currentTurn;
-            }
-            else {
+            } else {
                 return null;
             }
-
         })
     }
-
     // Component Render
     render() {
-        console.log(this.state.currentTurn);
-    
         return (
             <div className="app-container">
-                {this.state.winner ? <h2>{`The winner is ${this.state.currentTurn}`}</h2> : null}
+                <h1>Tic-React-Toe</h1>
+                {this.state.winner ? <h2 className="swing winner">{`${this.state.currentTurn===player_one ? player_two : player_one} WINS!!!`}</h2> : null}
                 <div className="board">
                     {this.state.board.map((cell, index) => {
                         return <div onClick={() => this.handleClick(index)} key={index} className="square"><p className="playerSymbol">{cell}</p></div>
@@ -85,5 +77,6 @@ class App extends Component {
             </div>
         )
     }
-}
+} // === End Component ================
+
 export default App;
