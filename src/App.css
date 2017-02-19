@@ -1,0 +1,30 @@
+body {
+    font-family: helvetica;
+}
+
+.board {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    box-sizing: border-box;
+    border: 5px solid black;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square:hover{
+    background-color: green;
+    opacity: .75;
+    cursor: pointer;
+}
