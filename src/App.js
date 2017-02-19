@@ -75,6 +75,7 @@ class App extends Component {
                     <button onClick={() => this.handleReset()} className="resetButton">RESET</button>
                 </div>
             </div>
+
         )
     }
 } // === End Component ================

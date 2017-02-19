@@ -119,7 +119,6 @@ h2 {
         animation-iteration-count: 1;
 }
 
-
 @-webkit-keyframes swing{
         0%{
             -webkit-transform: translateX(-5000px);
